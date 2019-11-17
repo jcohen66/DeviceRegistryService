@@ -37,20 +37,6 @@ def index():
         # Convert to HTML
         return markdown.markdown(content)
 
-@app.route("/doc")
-def print_doc():
-    """Present some documentation"""
-
-    # Open the README file
-    with open(os.path.dirname(app.root_path) + '/README.md', r) as markdown_file:
-
-        # Read the content of the file
-        content = markdown_file.read()
-
-        # Convert into HTML
-        return markdown.markdown(content)
-
-
 class DeviceList(Resource):
     def get(self):
         shelf = get_db()
